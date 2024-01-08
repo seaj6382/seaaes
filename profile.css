@@ -1,0 +1,34 @@
+
+*{
+    font-family: Noto Serif KR, Arial, monospace;
+    text-align:center;
+}
+
+html{
+    background-color: #efe6e6 ;
+    font-size: 16px;
+}
+
+body{
+    width: 640px;
+    margin: auto;   
+}
+h1{
+    font-size: 48px;
+}
+img{
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+}
+p{
+    font-size: 1.5rem;
+}
+hr{
+    background-color: #ffffff;
+    height: 3px;
+    border: 0;
+}
+
+/* 챌린지 글꼴, 원하는 색감, 글자 크기, 전체적인 바디 레이아웃,   */
+
