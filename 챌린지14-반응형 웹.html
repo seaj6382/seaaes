@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반응형 웹</title>
+    <style>
+        html{
+            background-color: rgb(162, 0, 255);
+        }
+       
+        @media screen and (min-width: 430px) {
+            html{
+                background-color: blue;
+            }
+            div::after{
+                content: "iphon 14 pro max";
+            }  
+        }
+        @media screen and (min-width: 768px) {
+            html{
+                background-color: skyblue;
+                
+                /* ipad mini */
+            }
+            div::after{
+                content: "ipad mini";
+            }
+        }
+        @media screen and (min-width: 1024px) {
+            html{
+                background-color: green;
+                /* ipad pro */
+            }
+            div::after{
+                content: "ipad pro";
+            }
+        }
+        @media screen and (min-width: 1366px) {
+            html{
+                background-color: rgb(255, 242, 0);
+                /* laptp */
+            }
+            div::after{
+                content: "Laptop";
+            }
+        }
+      
+        .box{
+            width: 300px;
+            display: block;
+            margin: auto;
+            text-align: center;
+            margin-top: 400px;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box"><h2>여러화면 크기로 구경해요!</h2></div>
+
+</body>
+</html>
