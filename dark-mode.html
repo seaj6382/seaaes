@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>다크모드</title>
+
+    <style>
+        .dark-mode{
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <button id="light">white</button>
+    <button id="dark">black</button>
+
+    <script>
+        const lightMode = document.querySelector('#light')
+        const darkMode = document.querySelector('#dark')
+
+        var body = document.body
+
+        lightMode.addEventListener('click', function(){
+            body.classList.remove('dark-mode')    
+        })
+
+        darkMode.addEventListener('click', function(){
+            body.classList.add('dark-mode')
+        })
+
+
+
+    </script>
+    
+</body>
+</html>
