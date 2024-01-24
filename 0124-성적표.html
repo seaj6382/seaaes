@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>성적표</title>
+    <style>
+        table, tr, td, th{
+            border: 1px solid black;
+            width: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>떡잎 유치원 멀리뛰기 결과</h1>
+        
+        <table>
+            <tr>
+                <th>이름</th>
+                <th>점수</th>
+            </tr>
+            <tr>
+                <td>짱구</td>
+                <td>45</td>
+            </tr>
+            <tr>
+                <td>맹구</td>
+                <td>75</td>
+            </tr>
+            <tr>
+                <td>철수</td>
+                <td>95</td>
+            </tr>
+            <tr>
+                <td>훈이</td>
+                <td>50</td>
+            </tr>
+            <tr>
+                <td>유리</td>
+                <td>68</td>
+            </tr>
+            <tr>
+                <td>수지</td>
+                <td>86</td>
+            </tr>
+        </table>
+
+        <h1>75점이 넘는 사람 : </h1>
+        <p id="p"></p>
+    </div>
+
+    <script>
+        let data = [
+            {이름:'짱구', 점수:45},
+            {이름:'맹구', 점수:75},
+            {이름:'철수', 점수:95},
+            {이름:'훈이', 점수:50},
+            {이름:'유리', 점수:68},
+            {이름:'수지', 점수:86}
+        ]
+
+        let result = []
+        for(let i=0; i < data.length; i++){
+            if(data[i]['점수'] >= 75){
+                result.push(data[i]['이름'])
+            }
+        }
+        
+        document.write(result)
+    </script>
+</body>
+</html>
