@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mystery Number 맞추기</title>
+    <style>
+        html{
+            background-color: rgb(45, 38, 31);
+            color: white;
+        }
+        #containar{
+            margin-top: 50px;
+            text-align: center;
+        }
+        input{
+            height: 30px;
+            text-align: center;
+            font-size: 20px;
+        }
+        button{
+            margin-left: 20px;
+            width: 100px;
+            height: 40px;
+            background-color: rgb(45, 38, 31);
+            border: 2px solid orange;
+            border-radius: 5px;
+            color: orange;
+        }
+        #reset{
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div id="containar">
+        <h1>Mystery Number 맞추기</h1>
+        <br>
+        <h3>1부터 100사이의 숫자를 입력하세요!</h3>
+        <input type="number" id="user">
+        <button onclick="checkGuess()">두둥!</button>
+        <p id="hint"></p>
+        <br>
+        <button onclick="click_reset" id="reset">다시하기</button>
+
+    </div>
+    
+    <script>
+        const NumHint = document.getElementById('hint')
+        const UserNum = document.getElementById('user')
+        const ResetBtn = document.getElementById('reset') 
+
+        let secretNumber = Math.floor(Math.random() * 100 + 1)
+        console.log(secretNumber)
+
+        function checkGuess(){
+            let Num = UserNum.value
+
+            if(Num < secretNumber) {
+                NumHint.textContent = '힌트 : 입력한 숫자가 작습니다. 큰 숫자를 입력해주세요!'
+            } else if (Num > secretNumber) {
+                NumHint.textContent = '힌트 : 입력 숫자가 큽니다. 작은 숫자를 입력해주세요!'
+            } else {
+                alert('축하합니다! 정답을 맞췄습니다.')
+            }
+        }
+    </script>
+</body>
+</html>

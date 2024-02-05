@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper">
+        <h1>스톱워치</h1>
+        <p>
+            <span>경과 시간</span>
+            <span id="min">0</span>:
+            <span id="seconds">0</span>:
+            <span id="tens">0</span>
+        </p>
+  
+        <button id="btn-Start">시작</button>
+        <button id="btn-Stop">중지</button>
+      </div>
+
+      <script>
+        const appendMin = document.getElementById("min");
+        const appendTens = document.getElementById("tens");
+        const appendSeconds = document.getElementById("seconds");
+        const btnStart = document.getElementById("btn-Start");
+        const btnStop = document.getElementById("btn-Stop");
+
+        let min = 0;
+        let seconds = 0;
+        let tens = 0;
+        let Interval;
+
+        btnStart.onclick = function () {
+        // 기존에 있던 setInterval 없애고
+        clearInterval(Interval);
+
+        Interval = setInterval(startTimer, 10);
+        };
+
+        btnStop.onclick = function () {
+        clearInterval(Interval);
+        };
+
+        btnReset.onclick = function () {
+        clearInterval(Interval);
+
+        min = 0;
+        seconds = 0;
+        tens = 0;
+
+        appendMin.innerHTML = min
+        appendSeconds.innerHTML = seconds;
+        appendTens.innerHTML = tens;
+        };
+
+        function startTimer() {
+        tens++;
+
+        if (tens <= 9) {
+            appendTens.innerHTML = tens;
+        }
+
+        if (tens > 9) {
+            appendTens.innerHTML = tens;
+        }
+
+        // tens가 99보다 클 때
+        if (tens > 99) {
+            //  seconds 1 올리고
+            seconds++;
+            // appendSeconds에도 반영하기
+            appendSeconds.innerHTML = seconds;
+            // tens appendTens 0으로
+            tens = 0;
+            appendTens.innerHTML = 0;
+        }
+        if (seconds > 60) {
+            min ++
+            appendMin.innerHTML = min
+            seconds = 0
+            appendSeconds.innerHTML = 0
+        }
+    }
+      </script>
+</body>
+</html>
